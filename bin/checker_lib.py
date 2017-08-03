@@ -27,7 +27,8 @@ def parseArguments():
 
 def get_keys_from_enviroment(args, env):
     file = "{0}/app-config-{1}/{2}.yaml".format(args.workspace, env, args.projectName)
-    print "File name : " + file
+    if args.verbose:
+        print "File name : " + file
     with open(file, 'r') as stream:
         try:
             conf = yaml.safe_load(stream)
@@ -48,11 +49,11 @@ def diff(args,a,b):
     # diff_qa  = list(set(qa.keys()) - set(dev.keys())).sort()
     diff_a.sort()
     diff_b.sort()
-
+    print " "
     #print "{0} -> {1}".format(a,b)
     for key in diff_a:
         print "- " + key
-
+    print " "
     # print "{1} -> {0}".format(a,b)
     for key in diff_b:
         print "+ " + key
