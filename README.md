@@ -23,7 +23,7 @@ display the help file:
 ./bin/checker.py -h
 ```
 
-compare the staging and production versions of config for the vat-core project:
+compare the `staging` and `production` versions of config for the `vat-core` project:
 ```
 ./bin/checker.py $WORKSPACE vat-core staging prod
 ```
